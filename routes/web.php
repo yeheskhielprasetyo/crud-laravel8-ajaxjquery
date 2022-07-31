@@ -19,7 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('students', StudentController::class);
+Route::get('students', [StudentController::class, 'index']);
+Route::post('students', [StudentController::class, 'store']);
 
 Auth::routes();
 
